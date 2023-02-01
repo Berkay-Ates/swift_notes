@@ -1,0 +1,15 @@
+Struct degerelerini degiştirirken structun değerlerini let yerine var yapmak bir cozum yoludur. Fakat bundan daha iyi bir cozum yolu 
+halihazırda mevcuttur. Bu cozum yolu struct icerisine bir fonksiyon tanımlamak ve bu fonksiyonun istedigimiz tüm değişiklikleri 
+yaparak geriye bize yeni bir obje dondurmesini sağlamaktir. 
+
+
+struct Bike{
+    let manufacturer:String
+    let currentSpeed:Int
+    func copy(currenSpeed:Int) -> Bike {
+        Bike(manufacturer: self.manufacturer, currentSpeed: self.currentSpeed-5)
+    }
+}
+
+
+yani dart kısmında objelerin copywith() metodu olarak dusubebiliriz. 

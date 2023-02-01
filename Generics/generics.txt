@@ -1,0 +1,27 @@
+Genericler tıpkı dartta oldugu gibi zehirli urunler ve tasarımlar yapmak icin kullanılırlar genericler sayesinde bircok fonksiyonun 
+veya da yapının kullanılmasını kolaylastırmıs veya da ortaklastırmıs oluruz. 
+
+
+protocol CanRun{
+    func run()
+}
+
+// struct Person : CanJump , CanRun{
+struct Person : CanJump & CanRun{
+    func jump() {
+        print("hello world")
+    }
+    
+    func run() {
+        print("something new")
+    }
+}
+
+func jumpAndRun<T :CanRun & CanJump>(value : T){
+    value.jump()
+    value.run()
+}
+
+==> goruldugu uzere T generic yapısı hem CanRun ve CanJump yapısına da extends etti 
+
+ 

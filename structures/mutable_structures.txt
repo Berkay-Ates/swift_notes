@@ -1,0 +1,10 @@
+struct Car{
+    var currentSpeed:Int
+    mutating func drive(speed:Int){
+        "Driving..."
+        currentSpeed = speed
+    }
+}
+
+Yukarıdaki gibi tanımlanan bir structun let elemanlarında drive fonksiyonu kullanılamaz cunku obje let tanımlı. Fakat var tipinde 
+Tanımlı olan degiskenleri icin kullanılabilir. 

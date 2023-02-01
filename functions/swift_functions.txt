@@ -1,0 +1,41 @@
+func plusTwo(value:Int,value2:Int)->Int{
+    let newValue = value+value2;
+    print(newValue);
+    return newValue;
+}
+
+
+swift icerisinde fonksiyonun return parametresini yukarıdaki sekilde belirtebiliriz, veya return etmek istedigimiz 
+elemanın onune return yazmak istemessek de return ettirebilireiz. return newValue yerine sadece newValue yazarak. 
+
+func noNamedArg(_ param1:Int,_ param2:Int)-> Int{
+    param2+param1
+}
+
+yukarıdaki gibi parametreleri underscore ile tanımlarsak fonksiyonu kullananlar fonksiyona gelen parametrelere isim
+vermek zorunda degildirler
+
+
+ios veya macos veya watchOS kodu yazarken return degeri olan fonksiyonların return degerlerini bosta bırakırsak veya bu 
+degerelri alıp degerelendirmezsek swift bize kızar. Dolayısıyla kızmaması icin fonksiyonun basına @discardable yazarak 
+bu istegimizi belirtiriz. O da kızmaz. 
+
+*** bosu bosuna yaptıgımız parametre assign işlemlerinde de swift bize kızabilir hatta kudurur da diyebiliriz
+    fakat herhangi bir annotationla parametre konusunda kızmamasını saglayamayız. 
+
+
+SWIFT ICERISINDA FONKSIYONLAR KENDİ İCLERİNDE KENDİ FONKSİYONLARINU BARINDIRABILIRLER. 
+func doSomethingComplicated(with value:Int)->Int{
+    func mainFunc(value:Int)->Int{
+        value + 2
+    }
+    return mainFunc(value: value+3);
+}
+
+
+*** Swift icerisinde istersek fonksiyon parametrelerine default olarak parametre de aktarabiliriz *** 
+func getFullName(firstName:String = "bar",lastName:String = "foo")->String{
+    return firstName+lastName;
+}
+
+

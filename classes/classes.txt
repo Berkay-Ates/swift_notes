@@ -1,0 +1,8 @@
+classlar address copy ile calısırlar oysa structlar ise value copy olarak calisirlar. Kısacası struct degerlerinde yapılan update 
+islemleri struct'ın gercek degerini degistirmezken classta degişmiş olur. Ayrıca Dizide de degisebilir dizinin de addres copy olarak 
+degeri gonderilir cunku.
+
+
+~~~~~~~~~ C'De ~~~~~~~~~
+Tıpkı swift de oldugu gibi c de de structların degerleri kopyalanarak gonderilir. Herhangi bir sekilde address kopyalanarak gonderilmez
+

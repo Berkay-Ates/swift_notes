@@ -1,0 +1,10 @@
+swift icerisinde structurelar birbirlerinden inherit edemezler. 
+
+
+struct livething {
+    something something 
+}
+
+struct anotherLiveThing : livething { --> --> --> Completely illegal for structs in swift
+    something something more 
+}

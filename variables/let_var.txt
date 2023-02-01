@@ -1,0 +1,48 @@
+VARIABLES 
+    let --> this kind of variables can not assign again they just assign once 
+        So we can say let type of variables are constant
+
+    var -> the variables which is created as var could assign again and again 
+
+
+    let pi = 3.14 
+    var wheatherCondition = "rainy" 
+
+
+ARRAYS 
+    Arrayları da let ve var olusturmamıza gore durum degisiklik gosterir. Let arraylar constanttır sonrasında kendilerine eleman ekleyip 
+    cıkarmamıza izin verilmez. Diger yandan VAR tipindeki arraylara istersek eleman ekleyip cikarabiliriz. Yani kendilerini guncelleyebiliriz 
+
+    VAR tipindeki arrayler tamamen yeni arraylere de esitlenebilirler. AMA lakin let tipindekiler yeni arraylere esitlenemezler 
+    let tipindeki arraylere ne yeni eleman eklenbilir ne de yeni bir objeye esitlenebilirler 
+
+
+    var newArray = []  -> mutable 
+    let newArray = []  -> immutable
+
+    let moreName = []
+    var anyName = moreName // bu sekilde ypatıgımız atamalarda moreName constant oldugu icin veya da baska bir elemana atama yaptıgımız icin 
+                                buyuk ihtimalle baska bir elemana atama yaptıgımız icin let degiskeninin elemanları anyName adındaki degisken 
+                                icin kopyalanır
+
+
+// PREVIOUSLY IN SWIFT
+    let names = ["a name ","another name"]
+    var copy = names
+    copy.append("more name") // COPY DOES NOT REFER TO NAMES 
+
+    let oldArray = NSMutableArray(
+        array: ["foo","bar","hello"]
+    )
+
+    oldArray.add("more")
+    oldArray
+    
+    var newArray2 = oldArray // * newArray2 and old Array also means the same thing they have the same refference   
+    newArray2.add("new Object")
+
+    newArray2
+    oldArray // they are using the same address in the behind of the screen 
+
+        -> Dolayısıyla NSMutableArray'lerde let tam olarak bize ummutability icin koruma saglamıyor
+        

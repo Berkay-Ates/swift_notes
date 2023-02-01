@@ -1,0 +1,12 @@
+--> unary prefix 
+    tek eleman alan operatorlerdir  ornegin (!). Fakat Prefix oldugu icin unlem isareti degiskenin basına gelmek zorundadır
+--> unary postfix 
+    - SWIFT de nullSafety dir ve var olmama ihtimali olan degiskenlere karsı ! isareti kullanabilerik var diye zorlayabiliriz. Bu gibi durumda 
+        kullanılan ! isareti unary postfix olmaktadır.
+--> binary infix
+    normal bilindik + isareti gibi elemanlarin hepsi infix operatordur
+
+
+
+--> TERNARY OPERATOR 
+    age > 18 ? "you are an adult" : "you are not adult" 

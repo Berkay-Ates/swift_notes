@@ -1,0 +1,37 @@
+ISIN OZU TAM OLARAK BASINDA FUNCTION OLMADAN VARIABLE OLARAK FONKSIYON TANIMLAMAKTIR. DOLAYISIYLA BASINDA FUNC OLMADAN YAZILAN
+FONKSIYONLAR OZUNDE BIR CLOSURE FONKSIYONDUR.
+
+==> Closure'lar fonksiyonların ozellesmis halleridir. Clousurları C'deki makrolar gibi düşünebilmekle beraber python, js, dart gibi
+    bircok dilde daha clousurelar benzeri yapılar mevcuttur. 
+
+
+let add : (Int, Int) -> Int
+    = { (lhs: Int, rhs: Int) ->Int in
+      return lhs+rhs
+}
+
+func customADD(_ lhs:Int,_ rhs:Int,using function:(Int,Int)-> Int) -> Int{
+    return function(lhs,rhs);
+}
+
+var result = customADD(21, 12){ (lhs:Int,rhs:Int) -> Int in
+    lhs + rhs;
+}
+
+var result2 = customADD(22, 22){ (lhs,rhs) in
+    lhs + rhs;
+}
+
+let sum = customADD(23,32, using: add)
+
+yukarıdaki gibi closureların tanımları farklı farklı yapılabilir. Closureların icerisine operatorler de fonksiyon olarak gonderilebilir
+
+let ages = [30,20,19,40]
+ages.sorted(by: {(lhs: Int, rhs: Int) -> Bool in
+    lhs > rhs
+})
+
+ages.sorted(by: <)
+ages.sorted(by: >)
+
+

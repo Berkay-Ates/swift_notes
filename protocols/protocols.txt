@@ -1,0 +1,12 @@
+Protocoller darttaki mixinlere benzerler. Aslına bakılırsa suan gordugumuz kadarıyla protocoller intreface klasslara da benziyor 
+olabilirler. Protocoller icerisinde bodysi olmayan fonksiyonlar saklayabiliyoruz dolayısıyla protocoller diger bircok klasa da 
+temel olabiliyorlar veya interface. 
+
+
+Structurelar protocollerden inheritance alabilmeye izin verirler ama structurelar birbirlerinden inheritance alamzalar.    
+
+Protocoller her ne kadar diger dillerdeki abstract classlara benzeseler de sahip oldukları fonksiyonlar icin fonksiyon govdeleri 
+bulunduramazlar. 
+
+
+Protocoller icerisinde fonksiyon govdeleri barındıramazlar. Protocollere extension yazarak fonksiyon govdesi atayabiliriz. 

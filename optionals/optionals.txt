@@ -1,0 +1,44 @@
+In swift optional means swift is null safety ,so int? does not means there are exacty an int value. 
+
+if let value {
+    print("value does not nil")
+}
+
+if value != null{
+    print("valued does not nil")
+}
+
+Swift icerisinde bilindik basit null kontrollerine eke olarak guard yapısı da vardır 
+guard ile bir yapının bos olup olmadıgını kontrol eder ve eger bos ise otomatik olarak cikarız.
+
+
+guard age != null else{
+    "age was null so we have to return this function"
+    return;
+}
+
+==> Guard yapısı basitce elemanın nil olup olmadıgını kontrol eder fakat degerin nil olup olmadıgını fonksiyon hala asagılarda anlar 
+    yetkinlikte degildir. Eger kontrol ile fonksiyonun nill olmadıgını da anlasın istersek bu defa kullanmamız gereken " gard let age "
+    yapısıdır.
+
+
+    fun checkAndMakeSure(value:Int?) {
+        gard let value else {
+            print("value was null sorry about that")
+            return
+        }
+    }
+
+==> Optionals'ların da kendi icerisinde enumeration yapısına sahip olmalarından faydalanarak enum typelarından da
+    if kontrolu yapabiliriz.
+
+age = 0
+switch(age){
+case .none:
+    "print age is nil"
+case .some(0):
+    "age is not nil it has some value"
+case .some(_):
+    "age has some values and it is not equal to 0"
+}
+

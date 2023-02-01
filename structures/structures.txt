@@ -1,0 +1,57 @@
+swift icerisinde de struct yapıları tanımlayarak verileri bizim icin paket halinde tutan yapılar tasarlayabiliriz. Structurlar dizi 
+gibi calısmazlar value copy olarak calısırlar. Yani pointer gibi değil de hard copy valuelar gibi işler yurutulur. 
+
+
+struct Person{
+    let name:String
+    let age:Int
+}
+let foo = Person(name: "Foo",age: 23)
+
+foo.name
+foo.age
+
+
+*** Structlar icerisinde constructorları olusturarak parametrelerin otomatik baslangıç degeri alması gibi ayarlamaları da duruma 
+    gore manipule edebiliriz. 
+    
+    struct Person{
+        let name:String
+        let age:Int
+        let manufacturer:String
+        init(name:String,age:Int){
+            self.name = name
+            self.age = age
+            self.manufacturer = "Comodoro"
+        }
+    }
+
+*** init yapısını tanımladıktan sonra default sabit degeri olacak elemanları ayrı diğerlerini ise ayrı tanımlamamız gereklidir. 
+    sabit bir deger atamak ve self anahtar kelimesini kullanmak gibi. Manufacturer'i var yaparsak disardan kendi isteğimizle
+    default değer haricinde bir degerle de initialize edebiliriz. 
+
+
+*** default deger atama islemi sonucu degiskene atanan degeri degıstırmek istersek struct icerisinde degiskeni var yapmamız yeter 
+
+*** Default deger atama işlemini gelen parametrelere gore yapmak istiyorsak *** init *** yapısını kullanarak bunu yapabiliriz. Buna 
+    ek olarak fonsiyon gibi tanımlama yaparak da istediğimiz sonuca ulaşabiliriz. 
+
+    struct Person3{
+        let firstName:String
+        let lastName:String
+        var fullname:String {
+            
+            // Bu elemanı fonksiyon gibi tanımlayınca sonradan tanımlama yapılır
+            // Sonradan değer ataması olacagı icin kendisini var yapıyoruz
+
+            "\(firstName) \(lastName)"
+            }
+        }
+
+    let person3 = Person3(firstName: "Berkay", lastName: "Ates")
+    person3.fullname
+
+
+
+
+

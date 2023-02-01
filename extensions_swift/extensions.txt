@@ -1,0 +1,41 @@
+SWIFT TE SADECE EXTENSION ILE OBJELERE EK OZELLIK KAZANDIRMANIN DISINDA AYNI ZAMANDA OBJELERE FARKLI FARKLI INITILAZITION OZELLIKLERI 
+DE KAZANDIRABILIRIZ ORNEGIN BURADA OLDUGU GIBI. PERSON OBJESINE EXTENSION YAZARAK YENI BIR INIT ICERISINDE TANIMLADIK VE SONRASINDA 
+YENI INIT ICERISINDE PERSONUN KENDI INITINI CAGIRARAK KENDIMIZCE PERSONA BASTAN BIR INIT TANIMLAMIS OLDUK
+
+
+struct Person{
+    let firstName:String
+    let secondName:String
+}
+
+extension Person{
+    init(fullname:String){
+        let components = fullname.components(separatedBy: " ")
+        self.init(
+            firstName: components.first ?? "null",
+            secondName : components.last ?? "null"
+       )
+    }
+}
+
+let person = Person(fullname: "hello world")
+print(person.firstName)
+print(person.secondName)
+
+
+EXTENSIONLAR ILE CONVENIENCE INITIALIZERS *** 
+    CONVENIENCE anahtar kelimesini kullanarak default olarak klasslar uzerine initializerler yazabiliriz. 
+
+class MyDouble {
+    var value:Double;
+    init(value:Double){
+        self.value = value
+    }
+}
+
+extension MyDouble{
+
+    convenience init(){
+        self.init(value = 0)
+    }
+}
