@@ -1,0 +1,80 @@
+
+struct Person {
+    let firstName:String?
+    let lastName:String?
+    
+    enum PersonErrors : Error{
+        case firstNameIsNil
+        case lastNameIsNil
+        case bothNameAreNil
+    }
+    
+    func getFullName() throws -> String{
+        switch(firstName,lastName){
+            
+        case (.none, .none):
+            throw PersonErrors.bothNameAreNil
+        case(.some,.none):
+            throw PersonErrors.lastNameIsNil
+        case(.none,.some):
+            throw PersonErrors.firstNameIsNil
+        case let(.some(firstName),.some(lastName)):
+            return " \(firstName) \(lastName)"
+        }
+    }
+}
+***
+Swiftteki degisik bir try catch yapısı asagıdaki gibidir ve kullanımındaki anahtar kelimeler do-try-catch' dır.  
+
+let foo = Person(firstName: "hello", lastName: nil)
+
+do{
+    let fullName = try foo.getFullName()
+    fullName
+}catch is Person.PersonErrors{
+    "Got an error "
+}
+
+
+catch yapısında goruldugu gibi belirli bir specific erroru yakalamak istedigimizde is Person.PersonErrors yapısını kullanırız 
+
+*** 
+
+let bar = Person(firstName: nil, lastName: nil)
+
+do{
+    let fullNameOfBar = try bar.getFullName()
+}catch Person.PersonErrors.lastNameIsNil{
+    "last name is nil"
+}catch Person.PersonErrors.firstNameIsNil{
+    "first name is nil"
+}catch Person.PersonErrors.bothNameAreNil{
+    "both first and last name are nil"
+}
+
+Eger cath ile tum errorları yakalamak istersek bu defa yapmamız gereken olabilecek tum errorlar icin cathc yapısı kurgulamaktır.
+Yukarıdaki gibi coktu try-catch yapısı gibi kullanımlarda ilk olusan errorda hangi catch calısıyorsa oraya girilir diger errorlara da 
+uyacak bise olsa bile o errorar daha sonra oldukları icin calıstırılmazlar.
+
+***
+try? ve try! ilmemleri de birbirinden faklılık gosterir. Normalde error handling yaparken kullanmamız gereken try-catch yapısıdır. Eger 
+kullanmazsak da try? ni kullanmak daha dogru olur cunku try! kullandıgımız anda işlem sonucu herhangi bir exception oldugu anda uygulama 
+crash olur. 
+
+=== === === *** === === === *** === === === *** RESULTS IN SWIFT *** === === === *** === === === *** === === === 
+
+enum IntegerErrors:Error{
+    case noPositiveIntegerBefore(thisValue:Int)
+}
+
+func getPreviousPositiveInteger(
+    from int:Int)->Result<Int,IntegerErrors>{
+        guard int>0 else{
+            return Result.failure(IntegerErrors.noPositiveIntegerBefore(thisValue: int))
+        }
+        return Result.success(int)
+}
+
+
+Yukaridaki gibi swift icerisinde errorları yonetebilecegimiz RESULT yapıları da mevcuttur. Resultlar sayesinde errorları yonetebilir ve 
+hatta herhangi bir throw da kullanmaya ihtiyac duymayız
