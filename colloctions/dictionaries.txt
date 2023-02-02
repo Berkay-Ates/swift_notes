@@ -1,0 +1,11 @@
+let userInfo:[String:Any] = [
+    "name":"Foo",
+    "age":21,
+    "address":[
+        "address line1 ":  "address line1",
+        "postcode":21,
+        "streeed number":345
+    ]
+]
+
+

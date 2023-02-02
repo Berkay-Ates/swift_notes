@@ -1,0 +1,16 @@
+Collectionslar yani arraylar diger dillerde oldugu gibi swift icerisinde de onemlidirler. Diger dillerde olan bircok fonksiyon swift ,
+icerisinde de baska isimlerle veya da aynı isimlerle mevcut olarak bulunmaktadır.
+
+
+*** insert ile ilgili indexs'e istersek bir dizi istersek bir deger yerlestirebiliriz.
+*** map , filter, compact map 
+
+normal collection tanımlanması  => let numbers = [1,2,3,4,5,6]
+optional collection tanımlanması => let numvers : [int?] = [1,2,3,nil,5,6,7,8]
+
+*** string int gibi karısık elemanları icerisinde bulunduran bir dizi de olusturabiliriz 
+    let stuff1 = [ 1,"hello",2,"world"] as [Any]
+
+
+
+*** Compact mapler hem mapler hem de filtreleme yaparlar.

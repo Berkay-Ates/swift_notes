@@ -1,0 +1,36 @@
+Set'ler yani kumeler arrayların ozellesmis halidir kendi iclerinde her elemandan sadece 1 tane tutarlar. 
+let uniqueNumbers = Set([1,2,3,3,4])
+uniqueNumbers.count
+uniqueNumbers.map(-)
+
+*** setler de optional olabilirler
+let myNumbers = Set([1,2,3,4,nil,5,6])
+
+
+*** setler de generic mantıkla icerisinde nullable elemanlar barındırabilecek hale getirilebilirler
+let stuff3:Set<AnyHashable> = [1,2,3,4,"Vandad"]
+
+Herhangi bir set icersisindeki int,String gibi basit elemanların unique olmasını basitce saglayabiliriz ama struct gibi yapıların 
+haslanmasını saglamak biraz daha komplike olay 
+
+struct Person2:Hashable {
+   let id:UUID
+   let name:String
+   let age:Int
+    
+   func hash(into hasher: inout Hasher) {
+       hasher.combine(id)
+   }
+    
+    static func == (
+        lhs:Self,
+        rhs:Self
+    )->Bool{
+        lhs.id == rhs.id
+    }
+}
+
+
+
+
+
