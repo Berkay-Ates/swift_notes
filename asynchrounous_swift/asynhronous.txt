@@ -1,0 +1,32 @@
+import Foundation
+import PlaygroundSupport
+import _Concurrency
+
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+func calculateFullName(fn:String,ln:String) async ->String{
+    try? await Task.sleep(for: Duration.seconds(1))
+    return "\(fn) \(ln)"
+}
+
+Task {
+     let result1 = await calculateFullName(fn: "hello", ln: "world")
+    async let result2 = calculateFullName(fn: "hello2", ln: "world2")
+    await result2
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

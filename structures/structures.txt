@@ -53,5 +53,6 @@ foo.age
 
 
 
-
+Herhangi bir structu consola duzgun bir sekilde print ettirebilmek icin CustomDebugStringConvertible Protokolu ile extends ettirmemiz 
+gereklidir.
 
