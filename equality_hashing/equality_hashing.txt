@@ -1,0 +1,61 @@
+
+
+*** Equatilty fonksiyonları ile objelerin birbiri ile aynı olup olmadıgını kolayca tespit edebiliriz.
+
+struct Dog:Equatable{
+    
+}
+
+struct Person: Equatable{
+    let id: String
+    let name:String
+    var dog:Dog?
+}
+
+let foo1 = Person(id: "1", name: "foo")
+let foo2 = Person(id: "2", name: "foo2")
+
+if foo1 == foo2 {
+    "they are equal"
+}else{
+    "they are not equal"
+}
+
+
+**% Default equality objelerin tum ozelliklerinin birbiri ile ortusup ortusmadıgıne bakar ve ona gore objelerin birbiri ile aynı olup 
+    olmadıklarına karar verir ama istersek esitlik kontrolunu kendi mantıgımıza gore override ederek de calistırabiliriz. 
+
+    extension Person {
+        static func == (lhs:Self, rhs:Self)->Bool{
+            if lhs.id == rhs.id{
+                return true
+            }
+                return false
+        }
+    }
+
+**% Enum Typelarına dahi swift icerisinde equatable ozelligi atayabiliriz. 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
