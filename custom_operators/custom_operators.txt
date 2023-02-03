@@ -1,0 +1,8 @@
+Swift icerisinde o anki ozel durumumuza gore istedigimiz tarzdaki ozel operatorlerimizi tanımlayabiliriz. Ornegin 2 farkli Optional 
+stringi toplamak istersek swiftin bilindik + operatoru bizim icin calısmaz. Eger istersek biz kendimize ozgu optional stringleri toplayan 
+bir operator tanımlayarak istedigimiz islemi yaptırtabiliriz. 
+
+prefix operator ^
+prefix func ^ (value:String) -> String {
+    value.uppercased()
+}
